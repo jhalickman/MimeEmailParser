@@ -22,6 +22,8 @@ public enum WordError: Error {
 
 // WordDecoder decodes an RFC 2047 encoded-word (q, b words)
 public class WordDecoder {
+    
+    public init(){}
 
     public func decodeRFC2047Word(word:String) throws -> String {
         var input = word
