@@ -153,14 +153,6 @@ public class WordDecoder {
                 return String.Encoding.unicode
         }
    
-        /*let cfe = CFStringConvertIANACharSetNameToEncoding(charset as CFString)
-        if cfe != kCFStringEncodingInvalidId {
-            let se = CFStringConvertEncodingToNSStringEncoding(cfe)
-            let sse = String.Encoding(rawValue: se)
-            return sse
-        } else {
-            return String.Encoding.unicode
-        }
     }
     
     fileprivate func convert(charset:String, content:String) throws -> String {
