@@ -104,7 +104,54 @@ public class WordDecoder {
     }
     
     fileprivate func charsetToSwiftEncoding(charset:String) -> String.Encoding {
-        return String.Encoding.unicode
+        switch charset {
+            case "us-ascii":
+                return String.Encoding.ascii
+            //case "":
+            //    return String.Encoding.iso2022JP
+            case "ISO-8859-1":
+                return String.Encoding.isoLatin1
+            case "ISO-8859-2":
+                return String.Encoding.isoLatin2
+            case "GB2312":
+                return String.Encoding.japaneseEUC
+            case "macintosh":
+                return String.Encoding.macOSRoman
+            //case "":
+            //    return String.Encoding.nextstep
+            //case "":
+            //    return String.Encoding.nonLossyASCII
+            //case "":
+            //    return String.Encoding.shiftJIS
+            //case "":
+            //    return String.Encoding.symbol
+            case "utf-16":
+                return String.Encoding.utf16
+            case "utf-16be":
+                return String.Encoding.utf16BigEndian
+            case "utf-16le":
+                return String.Encoding.utf16LittleEndian
+            case "utf-32":
+                return String.Encoding.utf32
+            case "utf-32be":
+                return String.Encoding.utf32BigEndian
+            case "utf-32le":
+                return String.Encoding.utf32LittleEndian
+            case "utf-8":
+                return String.Encoding.utf8
+            case "windows-1250":
+                return String.Encoding.windowsCP1250
+            case "windows-1251":
+                return String.Encoding.windowsCP1251
+            case "windows-1252":
+                return String.Encoding.windowsCP1252
+            case "windows-1253":
+                return String.Encoding.windowsCP1253
+            case "windows-1254":
+                return String.Encoding.windowsCP1254
+            default:
+                return String.Encoding.unicode
+        }
    
         /*let cfe = CFStringConvertIANACharSetNameToEncoding(charset as CFString)
         if cfe != kCFStringEncodingInvalidId {
