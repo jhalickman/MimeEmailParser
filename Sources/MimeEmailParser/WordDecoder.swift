@@ -160,7 +160,7 @@ public class WordDecoder {
             return sse
         } else {
             return String.Encoding.unicode
-        }*/
+        }
     }
     
     fileprivate func convert(charset:String, content:String) throws -> String {
