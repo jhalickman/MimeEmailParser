@@ -104,16 +104,20 @@ public class WordDecoder {
     }
     
     fileprivate func charsetToSwiftEncoding(charset:String) -> String.Encoding {
-        switch charset {
+        switch charset.lowercased() {
             case "us-ascii":
                 return String.Encoding.ascii
             //case "":
             //    return String.Encoding.iso2022JP
-            case "ISO-8859-1":
+            case "iso-8859-1":
                 return String.Encoding.isoLatin1
-            case "ISO-8859-2":
+            case "iso-8859-2":
                 return String.Encoding.isoLatin2
-            case "GB2312":
+            case "iso-8859-15":
+                let cfEnc = CFStringEncodings.isoLatin9
+                let nsEnc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEnc.rawValue))
+                return String.Encoding(rawValue: nsEnc)
+            case "gb2312":
                 return String.Encoding.japaneseEUC
             case "macintosh":
                 return String.Encoding.macOSRoman
