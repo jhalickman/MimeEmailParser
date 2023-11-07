@@ -114,9 +114,11 @@ public class WordDecoder {
             case "iso-8859-2":
                 return String.Encoding.isoLatin2
             case "iso-8859-15":
-                let cfEnc = CFStringEncodings.isoLatin9
+                /* TODO This is the right way to do it but calls functions that do no compile on Linux
+                 let cfEnc = CFStringEncodings.isoLatin9
                 let nsEnc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEnc.rawValue))
-                return String.Encoding(rawValue: nsEnc)
+                return String.Encoding(rawValue: nsEnc)*/
+                return String.Encoding.isoLatin2
             case "gb2312":
                 return String.Encoding.japaneseEUC
             case "macintosh":
